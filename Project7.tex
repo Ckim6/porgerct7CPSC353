@@ -97,7 +97,29 @@ The odd prime divisors of the integer $n^4 +1$ are of the form $8k + 1$.
 %%%%%%%%%%%%% You’ll also find the  algorithm in McAndrew, p. 119.  Show all work.
 \subsection{Proof}
 Using the primitive root test algorithm developed in class, find the primitive roots of 13.
-
+\\\\
+First lets see how many primitive roots 13 has. We can find this out by doing $\phi(\phi(13))$ which gives us 4
+\\\\
+To find the primitive roots, we only need to test values less than 13 which are coprime with 13 which are A = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)
+\\\\
+For any value a in A to be a primitive root of 13, $a^{\phi(13)/d} \not \equiv 1 \pmod{13}$ for all values d. d is the factors of 12 which are $2^2 * 3$, so d = (2, 3). Thus the powers we need to test are $12/2 = 6$ and $12/3 = 4$.
+\\\\
+Hence for each value a in A, we need to test that $a^{4} \not \equiv 1 \pmod{13}$ and $a^{6} \not \equiv 1 \pmod{13}$
+\begin{enumerate}
+    \item $1^4 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $2^4 \equiv 3 \pmod{13}$ and $2^6 \equiv 12 \pmod{13}$ so IS a PR
+    \item $3^4 \equiv 3 \pmod{13}$ and $3^6 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $4^4 \equiv 9 \pmod{13}$ and $4^6 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $5^4 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $6^4 \equiv 9 \pmod{13}$ and $6^6 \equiv 12 \pmod{13}$ so IS a PR
+    \item $7^4 \equiv 9 \pmod{13}$ and $7^6 \equiv 12 \pmod{13}$ so IS a PR
+    \item $8^4 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $9^4 \equiv 9 \pmod{13}$ and $9^6 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $10^4 \equiv 3 \pmod{13}$ and $10^6 \equiv 1 \pmod{13}$ so NOT a PR
+    \item $11^4 \equiv 3 \pmod{13}$ and $11^6 \equiv 12 \pmod{13}$ so IS a PR
+    \item $12^4 \equiv 1 \pmod{13}$ so NOT a PR
+\end{enumerate}
+Thus the four primitive roots of 13 are 2, 6, 7, and 11.
 
 
 \end{document}
